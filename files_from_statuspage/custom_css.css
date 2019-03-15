@@ -1,0 +1,104 @@
+.preview {
+    width: 100%;
+    max-width: 1100px;
+    margin: 40px auto;
+    border: 1px dashed rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+header {
+    background-image: url("https://s3.amazonaws.com/status-ni-temp/back.png");
+    height: 90px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+header .header_wrap {
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 1100px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+header .header_wrap .support a {
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+.preview::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -18px;
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.components-section {
+    display: none;
+}
+
+header .header_wrap a {
+    text-align: center;
+}
+
+.header_ttl {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.header_ttl a {
+    color: #fff;
+    line-height: 28px;
+}
+
+svg {
+    margin-right: 10px;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+}
+
+@media all and (max-width: 800px) {
+    .header_wrap {
+        padding: 0 10px;
+    }
+
+    .header_ttl a {
+        line-height: 22px;
+        font-size: 22px;
+    }
+
+    header .header_wrap .support a {
+        font-size: 18px;
+        line-height: 17px;
+    }
+}
+
+@media all and (max-width: 414px) {
+
+    tbody td:nth-child(2),
+    thead td:nth-child(2) {
+        display: none;
+    }
+}

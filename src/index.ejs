@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Widget Template</title>
+
+  <style>
+    .preview {
+      width: 100%;
+      max-width: 1100px;
+      margin: 80px auto;
+      border: 1px dashed rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .preview::before {
+      content: 'WIDGET PREVIEW';
+      position: absolute;
+      display: block;
+      top: -18px;
+      font-size: 11px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+
+</head>
+
+<body>
+  <div data-widget-host="habitat" class="preview">
+    <div id='status-app'>
+      <!-- add ID or NAME of Component for exclude from table -->
+      <script type="text/props">
+        {
+          "blacklist": ["g0sz8f1z3xkd", "mc8k0fp2nnpb", "Data ETL", "IT"]
+        }
+      </script>
+    </div>
+  </div>
+  <script async src="/bundle.js"></script>
+</body>
+
+</html>
