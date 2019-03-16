@@ -29,7 +29,12 @@ html {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 10px;
+  @media all and (max-width: 800px) {
+    display: none;
+  }
 }
+
+
 
 .legendItem {
   display: flex;

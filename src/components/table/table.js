@@ -11,8 +11,8 @@ const API_HOST = process.env.NODE_ENV !== 'production' ? 'https://s3.amazonaws.c
 const PAGEID = '8j8cgh0rb4yx';
 const API_KEY = process.env.PREACT_APP_SECRET_CODE;
 const API_INCEDENT_PROD = `https://8j8cgh0rb4yx.statuspage.io/api/v2/incidents/unresolved.json`
-const API_INCEDENT_DEV = `https://api.statuspage.io/v1/pages/${PAGEID}/incidents/unresolved?api_key=${API_KEY}`;
-const API_INCEDENT = process.env.NODE_ENV !== 'production' ? API_INCEDENT_DEV : API_INCEDENT_PROD;
+const API_INCEDENT_DEV = `https://api.statuspage.io/v1/pages/${PAGEID}/incidents/unresolved?api_key=08599542-e735-445c-bc2b-b346e329387c`;
+const API_INCEDENT = process.env.NODE_ENV !== 'production' ? API_INCEDENT_DEV : API_INCEDENT_DEV;
 
 const Tooltip = (source) => {
     const { data, date } = source;

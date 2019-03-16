@@ -94,11 +94,3 @@ svg {
         line-height: 17px;
     }
 }
-
-@media all and (max-width: 414px) {
-
-    tbody td:nth-child(2),
-    thead td:nth-child(2) {
-        display: none;
-    }
-}
