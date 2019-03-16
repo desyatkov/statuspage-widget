@@ -25,12 +25,14 @@
     "microbundle": "^0.6.0",
     "node-sass": "^4.5.3",
     "preact-cli": "^2.0.2",
+    "preact-cli-plugin-env-vars": "^1.2.1",
     "preact-render-to-string": "^3.7.0",
     "preact-widget-scripts": "^0.6.0",
     "sass-loader": "^6.0.6"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "classnames": "^2.2.6",
     "dayjs": "^1.8.10",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
