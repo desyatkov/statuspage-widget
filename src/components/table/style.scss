@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
-
-body,
-html {
-  font-family: 'Lato', sans-serif;
+.tableWrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-:local .link-wrap {
+.link-wrap {
   max-width: 1100px;
   width: 1100px;
   margin: 20px auto;
@@ -29,6 +28,11 @@ html {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 10px;
+
+  div {
+    font-size: 12px;
+  }
+
   @media all and (max-width: 800px) {
     display: none;
   }
@@ -87,7 +91,7 @@ html {
   font-weight: 700;
 }
 
-:local .investigating {
+.investigating {
   color: #ff8800;
   font-weight: 700;
 }
@@ -103,12 +107,17 @@ html {
   }
 
   &.activeCurrent {
+    background-color: #ddcb2b;
+    box-shadow: 0 0 0 1pt #ddcb2b;
+  }
+
+  &.isCriticalIncedent {
     background-color: #fe2824;
     box-shadow: 0 0 0 1pt #fe2824;
   }
 }
 
-:local table {
+table {
   margin: 0 auto;
   border-collapse: collapse;
   max-width: 1100px;
@@ -155,17 +164,17 @@ html {
 }
 
 @media all and (max-width: 800px) {
-  :local table {
+  table {
     width: 100%;
     max-width: 100%;
   }
 
-  :local table tbody tr,
-  :local table thead tr {
+  table tbody tr,
+  table thead tr {
     font-size: 11px;
   }
 
-  :local .link-wrap {
+  .link-wrap {
     width: 100%;
     max-width: 100%;
   }
@@ -179,12 +188,12 @@ html {
   }
 }
 
-:local .service_name {
+.service_name {
   width: 343px;
   vertical-align: middle;
 }
 
-:local .service_status {
+.service_status {
   text-align: center;
   width: 127px;
 }
@@ -198,12 +207,7 @@ html {
   border-radius: 50%;
 }
 
-.empty {
-  width: 6px;
-  height: 6px;
-}
-
-:local .incedent_elem {
+.incedent_elem {
   position: relative;
   width: 15px;
   height: 15px;
