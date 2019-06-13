@@ -7,7 +7,7 @@ import cx from 'classnames';
 // @ts-ignore
 import cls from "./style.scss";
 
-const API_HOST = process.env.NODE_ENV !== 'production' ? 'http://localhost:8887/index.json' : '/index.json';
+const API_HOST = process.env.NODE_ENV !== 'production' ? '/assets/index.json' : '/index.json';
 const PAGEID = '8j8cgh0rb4yx';
 const API_KEY = process.env.PREACT_APP_SECRET_CODE;
 const API_INCEDENT_DEV = `https://api.statuspage.io/v1/pages/${PAGEID}/incidents/unresolved?api_key=08599542-e735-445c-bc2b-b346e329387c`;
