@@ -4,8 +4,15 @@ import axios from 'axios';
 import shortid from 'shortid';
 import {filter, some}  from 'lodash';
 import cls from "./style.scss";
+import objDev from './index.json';
 
-const API_HOST = process.env.NODE_ENV !== 'production' ? 'https://s3.amazonaws.com/status-ni-temp/index.json' : '/index.json';
+// async function apiHost() {
+//     if (process.env.NODE_ENV !== 'production') {
+//         return objDev
+//     } else {
+//         return axios.get('/index.json');
+//     }
+// }
 
 const Tooltip = (data) => {
     const source = data.data;
@@ -37,7 +44,7 @@ const Tooltip = (data) => {
             </div>
         </div>
     )
-}
+};
 
 export default class Table extends Component {
 
@@ -70,7 +77,7 @@ export default class Table extends Component {
             headers: objectDates
         });
 
-        axios.get(API_HOST)
+        axios.get('/index.json')
             .then(function (response) {
                 const {components, incidents} = response.data;
 
