@@ -4,15 +4,15 @@ import axios from 'axios';
 import shortid from 'shortid';
 import {filter, some}  from 'lodash';
 import cls from "./style.scss";
-import objDev from './index.json';
+import mock from './index.json';
 
-// async function apiHost() {
-//     if (process.env.NODE_ENV !== 'production') {
-//         return objDev
-//     } else {
-//         return axios.get('/index.json');
-//     }
-// }
+async function apiHost() {
+    if (process.env.NODE_ENV !== 'production') {
+        return mock
+    } else {
+        return axios.get('/index.json');
+    }
+}
 
 const Tooltip = (data) => {
     const source = data.data;
@@ -52,7 +52,7 @@ export default class Table extends Component {
         super(props);
 
         const blacklist = props.blacklist.map(item=>item.toLowerCase().trim())
-        
+
         this.state = {
             rows: [],
             rowHeaders: {},
@@ -64,7 +64,7 @@ export default class Table extends Component {
     componentDidMount() {
         let objectDates = []
         for(let i=0; i<=5; i++){
-            let startdate = dayjs().subtract(i, "day");        
+            let startdate = dayjs().subtract(i, "day");
             objectDates.push({
                 id: shortid.generate(),
                 date: startdate,
@@ -77,24 +77,24 @@ export default class Table extends Component {
             headers: objectDates
         });
 
-        axios.get('/index.json')
+        apiHost()
             .then(function (response) {
                 const {components, incidents} = response.data;
 
 
-                const filerTo = id => {   
+                const filerTo = id => {
                     return objectDates.map((date) => {
-                        return filter(incidents, function(incedent) { 
+                        return filter(incidents, function(incedent) {
                             const incedentDate = dayjs(incedent.created_at)
                             const arrayDate = date.date
 
                             const groupid = some(incedent.components, { 'group_id': id });
 
                             return arrayDate.isSame(incedentDate, 'date') && groupid
-                            });       
+                            });
                     })
                 };
-            
+
                 const rows = [];
 
                 components.forEach( ({name, id, position}) =>{
@@ -117,8 +117,8 @@ export default class Table extends Component {
             })
     }
 
-    
-    
+
+
     render() {
         const { rowHeaders, rows } = this.state;
 
@@ -149,7 +149,7 @@ export default class Table extends Component {
                             return (
                                 <tr key={row.rowId} id={row.rowId}>
                                     <td>{row.rowName}</td>
-                                    
+
                                     {row.incedents.map( element =>{
                                         return (
                                             <td key={shortid.generate()}>
